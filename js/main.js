@@ -2,19 +2,30 @@
 // Tramite una funzione javascript disegnare in pagina la griglia con massimo 10 celle per riga.
 // Al click su una cella dovrà essere mostrato con un alert il numero della cella e il suo background diventerà rosso.
 
+function buildGrid(row, cols, field) {
 
-var numCelle = parseInt(prompt('Da quante caselle vuoi sia composta la griglia: '));
+    let numTiles = row * cols;
 
-if (isNaN(numCelle)) {
-    alert('Errore, inserisci un numero');
-    
-} else if (numCelle == 0) {
-    alert('Errore, inserisci un numero da 1 a 100');
-    
-} else {
-    confirm('Vuoi che il campo sia grande' + numCelle + 'celle?');
-    
+    for (var i = 0; i < numTiles; i++) {
+        var tile = document.createElement('div');
+        // tile.classList.add('tile');
+        field.appendChild(tile);
+        tiles.push(tile);
+    }
+
 }
+
+var numRows = parseInt(prompt('Da quante righe vuoi sia formato il campo?'))
+var numCols = parseInt(prompt('Da quante colonne vuoi sia formato il campo?'))
+
+const grid = document.querySelector('#playground');
+var row = 10;
+var tiles = []
+
+buildGrid(numRows, numCols, grid);
+
+
+
 
 
 
